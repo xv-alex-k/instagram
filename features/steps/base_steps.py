@@ -7,7 +7,8 @@ from behave import when
 
 @when('I click element with text "{text}"')
 def step_impl(context, text):
-    WebDriverWait(context.driver, 10).until(ec.element_to_be_clickable((By.XPATH, "//*[text() = '{}']".format(text))))
+    WebDriverWait(context.driver, 10).until(ec.element_to_be_clickable(
+        (By.XPATH, "//*[text() = '{}']".format(text)))).click()
 
 
 @when('I see element with text "{text}"')
