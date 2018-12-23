@@ -7,19 +7,7 @@ Feature: Login
 
   Scenario: Valid login
     When I log in
-
-  Scenario Outline: Invalid login
-    When I type "<username>" in username field
-    When I type "<password>" in password field
-    When I click element with text "Log in"
-    When I see element with text "Sorry, your password was incorrect. Please double-check your password."
-
-    Examples:
-      | username | password |
-      | qwe      | qwqweee  |
-      | reqwe    | rqwe     |
-      | reqwerwq | sdasd    |
-
+    
 
   Scenario: Invalid login 1
     Then I see validation message for
