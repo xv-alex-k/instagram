@@ -1,4 +1,4 @@
-import api
+from features.pages import api
 from behave import when
 
 
