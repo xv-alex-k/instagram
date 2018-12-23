@@ -20,7 +20,6 @@ Feature: Login
       | qwe      | rqwe     |
       | qwe      | sdasd    |
 
-
   Scenario: Invalid login 1
     Then I see validation message for
       | username | password |
