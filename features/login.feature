@@ -17,14 +17,14 @@ Feature: Login
     Examples:
       | username | password |
       | qwe      | qwqweee  |
-      | reqwe    | rqwe     |
-      | reqwerwq | sdasd    |
+      | qwe      | rqwe     |
+      | qwe      | sdasd    |
 
 
   Scenario: Invalid login 1
     Then I see validation message for
       | username | password |
       | qwe      | qwqweee  |
-      | reqwe    | rqwe     |
-      | reqwe    | sdasd    |
+      | qwe      | rqwe     |
+      | qwe      | sdasd    |
     When I type " " in password field

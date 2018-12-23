@@ -19,7 +19,8 @@ class BasePage(object):
             self.get_element(locator)
 
     def click_on(self, locator):
-        self.get_element(locator).click()
+        WebDriverWait(self.driver, 10).until(
+            ec.element_to_be_clickable(locator), message="Unable to click element").click()
 
     def type_in(self, locator, text):
         self.get_element(locator).clear()
