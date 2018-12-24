@@ -1,6 +1,7 @@
-from behave import step, when, then
+from behave import step
 
 from features.pages.login_page import LoginPage
+
 
 @step("I open login page")
 def step_impl(context):
@@ -13,19 +14,19 @@ def step_impl(context, username):
     login_page.enter_usermane(username)
 
 
-@when('I type "{password}" in password field')
+@step('I type "{password}" in password field')
 def step_impl(context, password):
     login_page = LoginPage(context.driver)
     login_page.enter_password(password)
 
 
-@when("I click login button")
+@step("I click login button")
 def step_impl(context):
     login_page = LoginPage(context.driver)
     login_page.click_login()
 
 
-@when("I log in")
+@step("I log in")
 def step_impl(context):
     login_page = LoginPage(context.driver)
     login_page.enter_usermane(context.config.get("user", "username"))
